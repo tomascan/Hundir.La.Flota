@@ -26,7 +26,7 @@
 1514378674 source:c:\users\julen\desktop\code blocks\p2\hundir la flota\proc.c
 	"proc.h"
 
-1515432679 source:c:\users\tomy\desktop\hundir la flota\juego.c
+1515518689 source:c:\users\tomy\desktop\hundir la flota\juego.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -34,22 +34,22 @@
 	"tipus.h"
 	"proc.h"
 
-1514461396 c:\users\tomy\desktop\hundir la flota\libbarcos2017.h
+1515490377 c:\users\tomy\desktop\hundir la flota\libbarcos2017.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<ctype.h>
 	<stdbool.h>
 
-1514461396 c:\users\tomy\desktop\hundir la flota\tipus.h
+1515493343 c:\users\tomy\desktop\hundir la flota\tipus.h
 
-1514462365 c:\users\tomy\desktop\hundir la flota\proc.h
+1515495095 c:\users\tomy\desktop\hundir la flota\proc.h
 	<stdio.h>
 	<stdbool.h>
 	<time.h>
 	"libBarcos2017.h"
 	"tipus.h"
 
-1515435345 source:c:\users\tomy\desktop\hundir la flota\proc.c
+1515518773 source:c:\users\tomy\desktop\hundir la flota\proc.c
 	"proc.h"
 

@@ -136,4 +136,7 @@ accio P_a_letras ( fila: caracter) retorna caracter;
 */
 extern char P_a_letras (int f);
 
+extern void P_jugar(char tablero_barcos[][COL_MAX], char tablero_disparos[][COL_MAX], int dim);
+extern int P_iniciar_partida(char tablero_barcos[][COL_MAX], char tablero_disparos[][COL_MAX]);
+
 #endif /* FUNCIONS_H_INCLUDED */

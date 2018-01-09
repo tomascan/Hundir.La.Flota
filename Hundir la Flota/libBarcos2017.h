@@ -48,9 +48,9 @@ enum tret
 /** capcaleres funcions */
 /** =========================================================================
  accio B_inicializa_barcos (var tablero_barcos:taula de caracters, dim:enter);
- 
+
  - Inicialitza la disposicio dels vaixells dins del taulell de vaixells.
- 
+
  - Parametres formals:
     dim: (per valor) dimensio del taulell, ha de ser > DIM_MIN i < DIM_MAX.
         Abans de fer la crida, s'ha de validar que dim sigui correcte.
@@ -78,13 +78,13 @@ void B_inicializa_barcos_fijo (char tablero_barcos[][COL_MAX], unsigned int dim)
 /** =========================================================================
  funcio B_dispara (f:caracter, c:enter, var tablero_barcos:taula de caracters,
                     var mida:enter) retorna enter;
- 
+
  - Retorna el resultat del llancament (REPETIT-0, AIGUA-1...) i
  actualitza el taulell de vaixells amb les anotacions pertinents:
  CASELLA_VAIXELL_TOCAT o CASELLA_AIGUA_TOCADA.
  Si hi ha un error en la fila o columna, o en el contingut de la casella,
  retorna ERROR.
- 
+
  - Parametres formals:
     fila: (per valor) lletra de la fila, en majuscules. Ha de ser
         correcta d'acord amb les dimensions del taulell.
@@ -92,7 +92,9 @@ void B_inicializa_barcos_fijo (char tablero_barcos[][COL_MAX], unsigned int dim)
         amb les dimensions del taulell.
         Abans de fer la crida, s'ha de validar que fila i col siguin correctes!
         taulell_vaixells: (per referËncia) taula de dues dimensions
-        DIM_MAX x DIM_MAX.
+        DIM_MAX x DI
+
+        M_MAX.
  =========================================================================*/
 extern int B_dispara (char fila, int col, char tablero_barcos[][COL_MAX], int *mida);
 

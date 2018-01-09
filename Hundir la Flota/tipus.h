@@ -20,10 +20,10 @@
 #define FITXER_JOC       "juego.dat"        /* Doneu un nom al fitxer */
 
 /*#define __MAC__                      Comentar si SO es WIN */
-#define __WIN32__                 /* Comentar si SO es MAC o LINUX */
+#define _WIN32__                 /* Comentar si SO es MAC o LINUX */
 
 /* Definim la comanda segons el SO */
-#ifdef __WIN32__
+#ifdef _WIN32__
 #define NETEJA_PANTALLA "cls"
 #else
 #define NETEJA_PANTALLA "clear"

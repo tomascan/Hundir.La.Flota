@@ -7,7 +7,6 @@
  |	Nom: juego.c
  |  Descripcio del Programa:   Programa principal.
  | ----------------------------------------------------------------*/
-
 /* Incloure llibreries */
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,10 +22,11 @@ int main ()
     /* Declaracio de les variables del programa */
     char tablero_barcos[DIM_MAX][DIM_MAX];
     char tablero_disparos[DIM_MAX][DIM_MAX];
-    int col, hundidos, f, c, i, resultado;
-    char fila;
-    unsigned int dim, dim2;
+    int dim;
+    char opcion;
     data_t avui;
+    bool ampliado;
+    record_t record,fitxer_record[DIM_MAX];
 
 
     /* Inicialitzacions generals */
@@ -38,72 +38,83 @@ int main ()
 
    /* Codi de l'algorisme */
 
-    hundidos=0;
-    f=0;
-    col=0;
-    i=0;
+    dim=0;
 
+    ampliado=false;
 
-    printf("Introduce el la dimension deseada para las tablas(8, 9 o 10): ");
-    scanf("%d", &dim);
-    while((dim!= 8) & (dim!=9) & (dim!=10)){
-        printf("Introduce una dimension valida para las tablas(8, 9 o 10): ");
-        scanf("%d", &dim);
-    }
+    /* Codi de l'algorisme */
+    printf("\nEstas en el juego de los barcos, teclea la letra de cada opcion para moverte por el menu.");
+    ampliado=false;
+    while(opcion!=102){
 
-    /*escribo las dimensiones de las tablas*/
-    printf("\n\nLas matrices son %d x %d\n\n", dim, dim);
+        if(!ampliado){
+            printf("\n\nEstas en el menu reducido");
+            printf("\n a.  Inicia una partida nova");
+            printf("\n b.  Carregar una partida");
+            printf("\n e.  Veure podium");
+            printf("\n f.  Sortir del joc\n");
 
-    /*inicializo las dos matrices */
-    P_inicializa_matriz(tablero_disparos,dim,dim,'?');
-    B_inicializa_barcos(tablero_barcos,dim);
+        }
+        else if(ampliado){
+            printf("\n\nEstas en el menu ampliado");
+            printf("\n a.  Inicia una partida nova");
+            printf("\n b.  Carregar una partida");
+            printf("\n c.  Jugar partida");
+            printf("\n d.  Emmagatzemar la partida");
+            printf("\n e.  Veure podium");
+            printf("\n f.  Sortir del joc\n");
 
+        }
 
-    P_muestra_dos_matrices(tablero_barcos,tablero_disparos,dim,dim);
+        printf("\nIntroduce la opcion deseada: ");
+        fflush(stdin);
+        scanf("%c", &opcion);
 
+        switch(opcion){
+            case 'a':
+                printf("\nHas elegido la opcion: Iniciar una partida nova\n\n");
+                dim = P_iniciar_partida(tablero_barcos, tablero_disparos);
+                printf("\n\n\n%d",dim);
+                ampliado = true;
 
-    while (hundidos<=9){
-            /*primero decido las coordenadas del disparo*/
-            P_decide_disparo(&f, &col,tablero_disparos,dim);
+                break;
+            case 'b':
+                printf("\nHas elegido la opcion: Carregar una partida");
+                ampliado = true;
+                break;
+            case 'c':
+                if(ampliado){
+                    printf("\nHas elegido la opcion: Jugar partida\n\n");
+                    P_jugar(tablero_barcos, tablero_disparos, dim);
+                }
 
-            /*paso las filas a letras mayusculas porque en P_decide_disparo se nos pide que lo hagamos con f (que es int) y en
-            B_dispara hay que usar fila(que es char)*/
-            fila=P_a_letras(f);
-            printf("\n\n\n\nLas coordenadas del disparo son: %c %d\n",fila,col);
+                else {
+                    printf("\nOpcion no valida, trii otra opcion");
+                }
+                break;
+            case 'd':
+                if(ampliado){
+                    printf("\nHas elegido la opcion: Emmagatzemar la partida");
+                    P_guarda_record (fitxer_record, record);
+                }
+                else {
+                    printf("\nOpcion no valida, trii otra opcion");
+                }
+                break;
+            case 'e':
+                printf("\nHas elegido la opcion: Veure podium");
+                break;
+            case 'f':
+                printf("\nHas elegido la opcion: Sortir del joc.  Adeu i fins aviat! ");
+                break;
+            default:
+                printf("\nOpcion no valida, trii otra opcion");
+                break;
 
+        }
+        }
 
-            /*guardo la dimension en otra variable para pasar a B_dispara porque la funcion B_dispara me combierte la dimension que le paso a 0*/
-            dim2=dim;
-
-            /*compruebo el resultado del disparo*/
-            resultado=B_dispara(fila,col,tablero_barcos,&dim2);
-
-            /*con P_actualiza_disparos digo el resultado del disparo y cambio la tabla de disparos utilizando P_procesa hundido*/
-            P_actualiza_disparos(f,col,tablero_disparos,resultado,dim);
-
-            /*vuelvo a mostrar las dos matrices*/
-            P_muestra_dos_matrices(tablero_barcos,tablero_disparos,dim,dim);
-
-            if(resultado==3){
-
-                hundidos++;
-            }
-
-            /*Pongo un contador para saber cuantos turnos llevo*/
-            i++;
-            printf("\n\n\nLleva %d turnos y %d barcos hundidos.", i, hundidos);
-
-            P_pausa();
-    }
-
-    printf("\n\n\nSe acabo la partida.");
-
-
-
-system ("pause");
 
 
     return 0;
 }
-
-
