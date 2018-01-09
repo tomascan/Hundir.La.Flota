@@ -46,7 +46,7 @@ int main ()
 
     printf("Introduce el la dimension deseada para las tablas(8, 9 o 10): ");
     scanf("%d", &dim);
-    while((dim!= 8) & (dim!=9) & (dim!=10)){
+    while((dim!=8) & (dim!=9) & (dim!=10)){
         printf("Introduce una dimension valida para las tablas(8, 9 o 10): ");
         scanf("%d", &dim);
     }
@@ -60,6 +60,7 @@ int main ()
 
 
     P_muestra_dos_matrices(tablero_barcos,tablero_disparos,dim,dim);
+
 
 
     while (hundidos<=9){
@@ -93,7 +94,7 @@ int main ()
             i++;
             printf("\n\n\nLleva %d turnos y %d barcos hundidos.", i, hundidos);
 
-            P_pausa();
+            //P_pausa();
     }
 
     printf("\n\n\nSe acabo la partida.");
@@ -105,5 +106,3 @@ system ("pause");
 
     return 0;
 }
-
-
