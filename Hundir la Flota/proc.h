@@ -49,10 +49,10 @@ void P_pausa(void);
 /*
 accio P_decide_disparo (var fila:enter, var col:enter, tablero_disparos: taula de caracters, dim:enter);
 */
-extern void P_decide_disparo (int *f, int *c, char tablero_disparos[][COL_MAX], int dim);
+extern void P_decide_disparo (int *f, int *c, char tablero_disparos[][COL_MAX], int dim, bool tocado, int primero_tocado_c, int primero_tocado_f, int *orientacion);
 
 /*
- accio P_procesa_hundido (fila:enter, col:enter, var tablero_disparos: taula de caracters, dim:enter);
+ accio P_procesa_hundido (fila:enter, col:enter, var tablero_disparos: taula de caracters, dim:enter, orietacion: entero);
  */
 extern void P_procesa_hundido (int f, int c, char tablero_disparos[][COL_MAX], int dim);
 
@@ -136,7 +136,13 @@ accio P_a_letras ( fila: caracter) retorna caracter;
 */
 extern char P_a_letras (int f);
 
-extern void P_jugar(char tablero_barcos[][COL_MAX], char tablero_disparos[][COL_MAX], int dim);
-extern int P_iniciar_partida(char tablero_barcos[][COL_MAX], char tablero_disparos[][COL_MAX]);
+extern void P_jugar0(char tablero_barcos[][COL_MAX], char tablero_disparos[][COL_MAX], int dim);
+
+extern int P_iniciar_partida(char tablero_barcos[][COL_MAX], char tablero_disparos[][COL_MAX], int *modo);
+
+/*accio P_muestra_records (records[]: record_T, dim: entero)*/
+extern void P_muestra_records (record_t records[], int dim);
+
+extern void P_jugar1(char tablero_barcos[][COL_MAX], char tablero_disparos[][COL_MAX], int dim);
 
 #endif /* FUNCIONS_H_INCLUDED */

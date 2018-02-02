@@ -26,7 +26,7 @@
 1514378674 source:c:\users\julen\desktop\code blocks\p2\hundir la flota\proc.c
 	"proc.h"
 
-1515518689 source:c:\users\tomy\desktop\hundir la flota\juego.c
+1516899542 source:c:\users\tomy\desktop\hundir la flota\juego.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -41,15 +41,39 @@
 	<ctype.h>
 	<stdbool.h>
 
-1515493343 c:\users\tomy\desktop\hundir la flota\tipus.h
+1516793399 c:\users\tomy\desktop\hundir la flota\tipus.h
 
-1515495095 c:\users\tomy\desktop\hundir la flota\proc.h
+1516899657 c:\users\tomy\desktop\hundir la flota\proc.h
 	<stdio.h>
 	<stdbool.h>
 	<time.h>
 	"libBarcos2017.h"
 	"tipus.h"
 
-1515518773 source:c:\users\tomy\desktop\hundir la flota\proc.c
+1517073500 source:c:\users\tomy\desktop\hundir la flota\proc.c
 	"proc.h"
+
+1516899542 source:c:\users\tomy\desktop\hundir la flota - copia\juego.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"libBarcos2017.h"
+	"tipus.h"
+	"proc.h"
+
+1515490377 c:\users\tomy\desktop\hundir la flota - copia\libbarcos2017.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<ctype.h>
+	<stdbool.h>
+
+1516793399 c:\users\tomy\desktop\hundir la flota - copia\tipus.h
+
+1516899657 c:\users\tomy\desktop\hundir la flota - copia\proc.h
+	<stdio.h>
+	<stdbool.h>
+	<time.h>
+	"libBarcos2017.h"
+	"tipus.h"
 
